@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 76% 45%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 142 76% 55%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 90% 55%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --ring: 142 76% 45%;
+
+    --radius: 0.75rem;
+
+    /* Gaming gradients */
+    --gradient-rainbow: linear-gradient(135deg, 
+      hsl(280 100% 60%), 
+      hsl(320 100% 60%), 
+      hsl(0 90% 60%), 
+      hsl(30 100% 60%), 
+      hsl(60 100% 60%), 
+      hsl(180 100% 50%)
+    );
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 45%), hsl(142 76% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 90% 55%), hsl(0 90% 65%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 7%), hsl(0 0% 10%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 10% / 0.6), hsl(0 0% 12% / 0.4));
+    
+    /* Shadows */
+    --shadow-glow-green: 0 0 60px hsl(142 76% 45% / 0.4);
+    --shadow-glow-rainbow: 0 0 80px hsl(280 100% 60% / 0.3);
+    --shadow-card: 0 20px 40px -15px hsl(0 0% 0% / 0.5);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142 76% 45%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 90% 55%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --ring: 142 76% 45%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary bg-clip-text text-transparent;
+  }
+
+  .text-gradient-rainbow {
+    background: var(--gradient-rainbow);
+    @apply bg-clip-text text-transparent;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-card/40 border border-white/10;
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow-green);
+  }
+
+  .glow-effect-rainbow {
+    box-shadow: var(--shadow-glow-rainbow);
+  }
+
+  .gaming-title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    text-transform: uppercase;
+  }
+}
