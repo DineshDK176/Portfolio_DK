@@ -21,10 +21,10 @@ const Contact = () => {
         <div className="max-w-2xl mx-auto">
           <div className="glass-card rounded-xl p-6 sm:p-8">
             <h3 className="text-2xl font-semibold mb-6 text-center">Contact Information</h3>
-            
+
             <div className="space-y-4 mb-8">
-              <a 
-                href="tel:+919629997186"
+              <a
+                href="tel:+918695214826"
                 className="flex items-center gap-4 p-4 rounded-lg hover:bg-primary/10 transition-colors group"
               >
                 <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors">
@@ -32,11 +32,11 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="font-medium text-sm sm:text-base">+91 962997186</p>
+                  <p className="font-medium text-sm sm:text-base">+91 8695214826</p>
                 </div>
               </a>
 
-              <a 
+              <a
                 href="mailto:dineshkarthikeyan176@gmail.com"
                 className="flex items-center gap-4 p-4 rounded-lg hover:bg-primary/10 transition-colors group"
               >

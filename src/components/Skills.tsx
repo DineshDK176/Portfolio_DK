@@ -1,29 +1,41 @@
-import { Code, Gamepad2, Box, Film } from "lucide-react";
+import { Code, Gamepad2, Box, Film, Palette } from "lucide-react";
 
 const skills = [
-  { 
-    name: "Blender", 
-    level: 90, 
+  {
+    name: "Blender",
+    level: 90,
     icon: Box,
-    description: "3D Modeling & Animation"
+    description: "3D Modeling"
   },
-  { 
-    name: "Unity", 
-    level: 80, 
+  {
+    name: "Godot",
+    level: 80,
     icon: Gamepad2,
     description: "Game Development"
   },
-  { 
-    name: "Java & C/C++", 
-    level: 85, 
+  {
+    name: "Java, C++ & Python",
+    level: 85,
     icon: Code,
     description: "Programming"
   },
-  { 
-    name: "Video Editing", 
-    level: 75, 
+  {
+    name: "Video Editing",
+    level: 75,
     icon: Film,
     description: "Content Creation"
+  },
+  {
+    name: "Pixel Art",
+    level: 40,
+    icon: Palette,
+    description: "Art Design"
+  },
+  {
+    name: "Animation",
+    level: 40,
+    icon: Film,
+    description: "Motion Graphics"
   },
 ];
 
@@ -39,7 +51,7 @@ const Skills = () => {
           {skills.map((skill, index) => {
             const Icon = skill.icon;
             return (
-              <div 
+              <div
                 key={skill.name}
                 className="glass-card rounded-xl p-6 hover:border-primary/50 transition-all duration-300 hover:scale-105"
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -53,9 +65,9 @@ const Skills = () => {
                     <p className="text-sm text-muted-foreground">{skill.description}</p>
                   </div>
                 </div>
-                
+
                 <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                  <div 
+                  <div
                     className="h-full bg-gradient-to-r from-primary to-accent rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${skill.level}%` }}
                   ></div>

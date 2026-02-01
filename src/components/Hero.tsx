@@ -9,9 +9,9 @@ const Hero = () => {
           <div className="grid md:grid-cols-2 gap-0 items-center bg-card/40 rounded-3xl overflow-hidden border border-white/5">
             {/* Left side - Profile image */}
             <div className="relative h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
-              <img 
-                src={profileImage} 
-                alt="Dinesh (DK)" 
+              <img
+                src={profileImage}
+                alt="Dinesh (DK)"
                 className="w-full h-full object-contain object-center"
               />
             </div>
@@ -21,11 +21,21 @@ const Hero = () => {
               <h1 className="text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
                 Dinesh K (DK)
               </h1>
-              
+
               <div className="space-y-3">
                 <p className="text-white/90 text-base sm:text-lg md:text-base lg:text-lg font-medium">
                   "Video Editor" | "Game designer" | "Programmer"
                 </p>
+                <div className="pt-6">
+                  <a
+                    href="https://drive.google.com/file/d/12nZubcZRaCIWbFggsQdlsNzWoHeMd_p3/view?usp=drive_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
+                  >
+                    Resume
+                  </a>
+                </div>
               </div>
             </div>
           </div>

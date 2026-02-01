@@ -1,4 +1,4 @@
-import { Video, Box, Code2 } from "lucide-react";
+import { Video, Box, Code2, Film, Palette } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const services = [
@@ -17,6 +17,16 @@ const services = [
     title: "Programming Teaching",
     description: "One-on-one or online programming lessons in Java, C, and C++. Making complex concepts easy to understand.",
   },
+  {
+    icon: Film,
+    title: "Animating",
+    description: "Creating smooth and expressive animations for games, videos, and presentations.",
+  },
+  {
+    icon: Palette,
+    title: "Pixel Art",
+    description: "Designing retro-style pixel art assets for games and digital media.",
+  },
 ];
 
 const Services = () => {
@@ -31,7 +41,7 @@ const Services = () => {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Card 
+              <Card
                 key={service.title}
                 className="glass-card p-8 hover:border-primary/50 transition-all duration-300 hover:scale-105 group"
                 style={{ animationDelay: `${index * 0.1}s` }}

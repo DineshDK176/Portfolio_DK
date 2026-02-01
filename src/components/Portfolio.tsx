@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
-import sdawImage from "@/assets/sdaw-project.jpg";
+import { Button } from "@/components/ui/button";
+import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import sdawImage from "@/assets/ai-interface.png";
 import carImage from "@/assets/Car_design.jpeg";
-import eggImage from "@/assets/egg-animation.jpg";
+import eggImage from "@/assets/Logo_HB.png";
+import pottiImage from "@/assets/Potti Game.png";
 
 const projects = [
   {
@@ -26,9 +29,19 @@ const projects = [
     link: "https://www.linkedin.com/posts/dinesh-k-7050a2290_blender-3d-3dmodeling-activity-7380505980708716544-l6tC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEfxNJkB5NmWGF7FW2E4CGnnDbOqngCxh5I",
     tags: ["Blender", "Animation", "YouTube"],
   },
+  {
+    title: "Potti Game Store",
+    description: "A comprehensive game store platform providing a seamless experience for browsing and purchasing games.",
+    image: pottiImage,
+    link: "https://github.com/DineshDK176/Potti-Games",
+    tags: ["React", "Game Store", "Web App"],
+  },
 ];
 
 const Portfolio = () => {
+  const [showMore, setShowMore] = useState(false);
+  const displayedProjects = showMore ? projects : projects.slice(0, 3);
+
   return (
     <section id="projects" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -39,8 +52,8 @@ const Portfolio = () => {
           A collection of my creative works showcasing 3D design, development, and animation skills.
         </p>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {displayedProjects.map((project, index) => (
             <a
               key={project.title}
               href={project.link}
@@ -84,6 +97,27 @@ const Portfolio = () => {
             </a>
           ))}
         </div>
+
+        {projects.length > 3 && (
+          <div className="flex justify-center">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => setShowMore(!showMore)}
+              className="group gap-2"
+            >
+              {showMore ? (
+                <>
+                  Show Less <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+                </>
+              ) : (
+                <>
+                  Show More <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+                </>
+              )}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
