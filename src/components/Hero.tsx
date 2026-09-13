@@ -28,7 +28,7 @@ const Hero = () => {
                 </p>
                 <div className="pt-6">
                   <a
-                    href="https://drive.google.com/drive/u/0/folders/1TDewfg6ChT-AFPuvGBxfS72neBtm7V78"
+                    href="https://drive.google.com/file/d/1w93WmcBlvwbxPoMjYEfNzSMeZ6o2rDxj/view?usp=drive_link"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
